@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habesha Haven – Real Estate Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero-container">
+    
+    <!-- 🔰 Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="images/log.jpeg" alt="brand logo" class="logo-img">
+        <span class="logo">Habesha Haven</span>
+      </div>
+      <nav>
+        <ul class="tabs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--  Hero Content -->
+    <div class="text-box-wrapper">
+      <div class="text">
+        <h1>Find Your Perfect Home in <em>Addis Ababa</em></h1>
+        <h2>Your ideal home is just a click away—discover properties backed by trust, tech, and the people who know your neighborhood best.</h2>
+        <ul class="list">
+          <li>Stable Long-Term Investment</li>
+          <li>Tangible Ownership & Security</li>
+          <li>Lifestyle & Location Power</li>
+        </ul>
+      </div>
+      <div class="box">
+        <p>Book your visit in one click.</p>
+        <button id="button1">Schedule a Call</button>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+const heroImage = document.querySelector('.hero-image');
+setTimeout(() => {
+  heroImage.classList.add('visible');
+}, 200); // delay for visual effect
+});
+</script>
+</html>
