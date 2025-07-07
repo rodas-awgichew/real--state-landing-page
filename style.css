@@ -1,217 +1,285 @@
-body{
-    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/*  Global Styles */
+body {
+  font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*  Main Container */
 .container {
-    background-color: rgb(238, 238, 241);
-    width: 100%;
-    min-height: 500vh;
+  background-color: rgb(238, 238, 241);
+  width: 100%;
+  min-height: 100vh; 
 }
 
-/* hero section*/
+/*  HERO SECTION */
 .hero-container {
-    background-image: url('images/demo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    position: relative;
-    min-height: 100vh;
-    padding: 0;
-    animation: fadeInHero 1.2s ease forwards;
-  }
-  @keyframes fadeInHero {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 2;
-      transform: translateY(0);
-    }
-  }
-  
-  .hero-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1;
-  }
-  
-  .hero-container * {
-    position: relative;
-    z-index: 2;
-   
-     ;
+  position: relative;
+  min-height: 100vh;
+  background-image: url('images/demo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 2rem; 
+  animation: fadeInHero 1.2s ease forwards;
+  overflow: visible; 
+}
 
-    }
-/* header section */
-  
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-container * {
+  position: relative;
+  z-index: 2;
+}
+
+/* STICKY HEADER */
 .header {
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-     padding: 0.8rem; 
-     margin-bottom: 0.2rem; 
-     position: sticky;
-    top: 0;
-    z-index: 1000;
-  background-color: rgba(15, 15, 16, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   backdrop-filter: blur(5px);
-
+  background-color: rgba(15, 15, 16, 0.85); 
+  flex-wrap: wrap; 
 }
-.hero {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  
+
 .logo-img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-}  
+  width: 80px; 
+  height: 80px;
+  object-fit: contain;
+}
+
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  
-.logo{
-    font-size: 35px;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
+
+.logo {
+  font-size: 2rem; 
+  font-weight: bold;
+  color: white;
+}
+
+
 .tabs {
-    display:flex;
-    
-    gap:14px;
-    list-style: none;
-    font-size: 20px;
-    color:aliceblue;
-
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  font-size: 1rem;
+  flex-wrap: wrap; 
 }
+
 .tabs li a {
-    color:rgb(243, 239, 239);
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
+  color: rgb(243, 239, 239);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.tabs li a:hover{
-    color:rgb(63, 85, 194);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-
+.tabs li a:hover {
+  color: rgb(63, 85, 194);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
+#login-link {
+  background-color: #303963;
+  font-size: 1.0rem;
+  min-height: 40px;
+  border-radius: 20px;
+  padding:8px;
+}
+
+#login-link:hover {
+  color: #262656;
+  text-decoration: underline;
+}
+
+
+/*  HERO TEXT + CTA BOX */
 .text-box-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    padding-top: 0rem; 
-  padding-bottom: 2rem;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-
-  }
-  
-.text{
-   margin-left: 50px;
-    width:60%;
+  display: flex;
+  flex-wrap: wrap; /* ✅ Allows vertical stacking on smaller devices */
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  align-items: center;
 }
+
+.text {
+  flex: 1 1 60%;
+  margin-left: 0; /* ✅ Removed hard margin for flexibility */
+}
+
 .text h1 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-  }
-  
-  .text h2 {
-
-    font-size: 1.6rem;
-    font-weight: normal;
-    margin-bottom: 1rem;
-    padding-top: 30px;
-  }
-  
-  .list {
-    list-style-type: disc;
-    font-size: 1.2rem;
-    font-weight: normal;
-    padding-left: 1.2rem;
-    padding-top: 40px;
-    list-style:disc;
-  }
-.box{
-    
-    display : flex;
-    justify-content:end;
-    align-content: center;
-    width:300px;
-    height:100px;
-    flex-direction: column;
-    align-items: center;
-    border: none;
-    padding: 10px;
-    background-color: #e9e9f3;
-    color:rgb(17, 15, 15);
-    border-radius: 4px ;
-    transform: translateY(20px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    margin-right: 10%;
-    margin-top: 300px;
-    font-size:1.2rem;
-
-
+  font-size: clamp(2rem, 5vw, 4rem); /* ✅ Responsive text sizing */
+  margin-bottom: 1.5rem;
 }
-#button1{
-    padding-top: 8px;
-    background-color: rgb(15, 15, 16);
-    color:rgb(218, 229, 241);
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1.2rem;  
+
+.text h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem); /* ✅ Responsive text sizing */
+  font-weight: normal;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+}
+
+.list {
+  list-style-type: disc;
+  font-size: 1rem;
+  padding-left: 1.2rem;
+  padding-top: 2rem;
+}
+
+/* 💬 CTA BOX */
+.box {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9e9f3;
+  color: rgb(17, 15, 15);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem; /* ✅ Removed fixed margin for flexibility */
+  font-size: 1rem;
+  padding: 1.2rem;
+}
+
+#button1 {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: rgb(53, 53, 95);
+  color: rgb(218, 229, 241);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
   transition: color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 #button1:hover {
-    background-color: rgb(61, 61, 157);
-    transform: scale(1.04);
-    box-shadow: 0 12px 28px rgba(63, 86, 202, 0.3);
+  background-color: rgb(61, 61, 157);
+  transform: scale(1.04);
+  box-shadow: 0 12px 28px rgba(63, 86, 202, 0.3);
+}
+
+/* ⬇️ SCROLL INDICATOR */
+.scroll-indicator {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  animation: bounce 1.5s infinite;
+  margin-bottom: 2rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* 📱 RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
 
+  .tabs {
+    justify-content: center;
+  }
+
+  .text-box-wrapper {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .box {
+    width: 90%;
+    margin: 2rem auto 0;
+  }
+
+  .scroll-indicator {
+    margin-bottom: 1rem;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+/* 📦 Section: Strength Of Our Company */
 .container_2 {
   margin-top: 10px;
   width: 100%;
   min-height: 40vh;
-  
+  /* No change needed here — base container is flexible */
 }
+
 .heading {
   padding-top: 40px;
   position: relative;
   justify-items: center;
-  
+  text-align: center; /* 🆕 Added for consistent alignment across devices */
 }
+
+/* 📐 Box Layout for Strength Features */
 .box-stack {
-  display:flex;
-  
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:10px;
-  padding:60px;
+  display: flex;
+  gap: 10px;
+  padding: 60px;
   border-radius: 15px;
+  justify-content: space-evenly; /* 🆕 Evenly distributes boxes across screen */
+  flex-wrap: wrap; /* 🆕 Enables wrapping on smaller screens */
 }
+
+/* 🔹 Individual Feature Card */
 .each_box {
+  width: 280px; /* 🆕 Fixed width for balance across resolutions */
+  height: 220px;
   background-image: url('images/demo.png');
   background-size: cover;
   background-position: center;
   color: aliceblue;
-  width: 80%;
-  height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,84 +293,161 @@ body{
   cursor: pointer;
 }
 
-
 .each_box:hover {
   transform: scale(1.04);
-  box-shadow: 0 12px 28px rgba(63, 85, 194, 0.3); /* blue-black glow */
+  box-shadow: 0 12px 28px rgba(63, 85, 194, 0.3); /* 🆕 Added glow effect */
 }
-.each_box h4{
+
+.each_box h4 {
   font-size: 1.2rem;
 }
+
 .fas {
   color: rgb(80, 22, 22);
   font-size: 24px;
 }
+
+/* Section: Stats Overview */
 .container_3 {
   margin-top: 20px;
   padding-top: 30px;
   display: flex;
-  position: relative;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 40px;
-  color:rgb(15, 16, 17);
+  color: rgb(15, 16, 17);
 }
+
 .data {
   min-height: 25vh;
   border: none;
-
+  text-align: center; 
+  flex: 1 1 200px; 
 }
 
+/* Section: Explore Our Sites (Listings) */
 .container_4 {
   margin-top: 20px;
   width: 100%;
-  min-height: 40vh;
+  min-height: 4rem;
   background-color: #f5f5f5;
+  padding: 2rem;
   justify-content: space-between;
-  justify-items: center;
-  padding:2rem;
 }
+
 .box-stack2 {
-  display:flex;
-  
-  gap:20px;
-  padding:60px;
-  
+  display: flex;
+  gap: 20px;
+  padding: 60px;
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
-.boxes img{
-  height:120px;
-  width:100%;
+
+.boxes img {
+  height: 120px;
+  width: 100%;
   border: 2px solid rgb(38, 38, 86);
   border-radius: 5px;
+  object-fit: cover; 
 }
+
 .boxes {
+  max-width: 320px; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  
+  justify-content: space-between;
   border-radius: 8px;
-  width: 100%;
   min-height: 40vh;
-  justify-items: center;
+  padding: 2rem;
+  text-align: center;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.03);
-  padding: 2rem; 
-  transition: box-shadow 0.1s ease; 
-  text-align: center;
+  transition: box-shadow 0.1s ease;
 }
+
+.boxes:hover {
+  transform: perspective(800px) rotateY(3deg) scale(1.02); /* 🆕 Hover animation */
+  transition: transform 0.4s ease;
+}
+
+.price {
+  margin-top: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2f2c2c;
+}
+
+/* Section: Call to Action Banner */
 .container_5 {
   margin-top: 50px;
   background-image: url('images/demo.png');
-  width:100%;
-  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
   color: #f5f5f5;
-  padding-top: 30px;
-  font-size: 24px;
-  padding:4rem;
+  width: 100%;
+  min-height: 40vh;
+  padding: 4rem 2rem; 
+  font-size: 1.5rem; 
   text-align: center;
+}
 
+/* CTA Button */
+.button2 {
+  background-color: rgb(38, 38, 86);
+  color: aliceblue;
+  font-size: 16px;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 0 2rem; 
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.button2:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 28px rgba(197, 198, 208, 0.3);
 }
 
 
+/*  Unified Responsive Rules */
+@media screen and (max-width: 768px) {
+  /* Stack grid boxes vertically */
+  .box-stack,
+  .box-stack2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .each_box,
+  .boxes {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .container_3 {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .data {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .container_5 {
+    padding: 3rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .button2 {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
 .button2{
   justify-content: center;
   background-color: rgb(38, 38, 86);
@@ -466,7 +611,7 @@ body{
 
 .contact-form button {
   margin-top: 1rem;
-  background-color: #3f55c2;
+  background-color: #353d69;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -500,3 +645,4 @@ body{
   text-align: center;
   font-size: 0.9rem;
 }
+

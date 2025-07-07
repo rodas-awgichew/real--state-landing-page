@@ -9,9 +9,9 @@
 </head>
 <body>
   <div class="container">
-  <div class="hero-container">
+  <div class="hero-container" id ="home">
     
-    <!-- 🔰 Header -->
+    <!--  Header -->
     <header class="header">
       <div class="brand">
         <img src="images/log.jpeg" alt="brand logo" class="logo-img">
@@ -19,10 +19,10 @@
       </div>
       <nav>
         <ul class="tabs">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#" id="login">Login</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#" id="login-link">Login</a></li>
         </ul>
       </nav>
     </header>
@@ -40,11 +40,15 @@
       </div>
       <div class="box">
         <p>Book your visit in one click.</p>
-        <button id="button1">Schedule a Call</button>
+        <button id="button1" onclick="location.href='#contact'">Schedule a Call</button>
       </div>
     </div>
   </div>
-  <div class="container_2">
+  <div class="scroll-indicator">
+    <i class="fas fa-angle-down"></i>
+  </div>
+  
+  <div class="container_2" id = "about">
     <div class="heading">
     <h1>Strength Of Our Company</h1>
     <p> ....................</p>
@@ -91,6 +95,7 @@
     <p> Support Tickets</p>
   </div>
  
+  
 </div>
 <div class="container_5">
   <h1 class="header">Your perfect home isn’t a dream. It’s a decision—and it starts here.</h1>
@@ -174,21 +179,4 @@
   
   
 </body>
-<script>
-  const prices = document.querySelectorAll('.price');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-      }
-    });
-  }, { threshold: 0.5 });
-
-  prices.forEach(price => {
-    price.style.animationPlayState = 'paused';
-    observer.observe(price);
-  });
-</script>
-
 </html>
