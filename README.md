@@ -21,7 +21,7 @@ This landing page showcases properties, highlights features, and provides a clea
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ What I Used
 
 - **HTML5 & CSS3**: Semantic markup and maintainable styles for clean structure.
 - **Responsive Design**: Mobile-first approach using CSS Flexbox/Grid and media queries.
@@ -41,38 +41,7 @@ During the development of this project, I learned and practiced:
 - Integrating assets and optimizing images for web performance.
 
 ---
----
 
-## 📝 Usage
-
-Feel free to fork this repository and use it for your own real estate projects! You can:
-
-1. Clone the repo
-   ```bash
-   git clone https://github.com/rodas-awgichew/real--state-landing-page.git
-   ```
-2. Open `index.html` in your browser.
-3. Customize the content, images, and styles as per your needs.
-
----
-
-## 📦 Folder Structure
-
-```
-real--state-landing-page/
-│
-├── index.html
-├── styles/
-│   └── style.css
-├── scripts/
-│   └── main.js
-├── assets/
-│   ├── images/
-│   └── icons/
-└── README.md
-```
-
----
 
 ## 🤝 Contributing
 
