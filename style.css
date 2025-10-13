@@ -539,7 +539,7 @@ html {
 
 /* Contact Section */
 .contact {
-  padding: 4rem ;
+  padding: 4rem;
   background-color: #f5f5f5;
   text-align: center;
 }
@@ -556,83 +556,34 @@ html {
   color: #1e1f2f;
 }
 
-
-.contact-form {
+/* Clean container — only used for centering */
+.google-form-container {
   max-width: 700px;
   margin: 0 auto;
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  border-top: 6px solid #2f3a71;
-  
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-.contact-form:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 28px rgba(63, 85, 194, 0.3);
-}
-
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  text-align: left;
-}
-
-
-.form-field label {
-  font-weight: 600;
-  color: #1e1f2f;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.form-field input,
-.form-field textarea {
+/* Style the iframe itself */
+.google-form-container iframe {
   width: 100%;
-  padding: 0.75rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  font-family: inherit;
-  background-color: #fdfdfd;
-  transition: border-color 0.3s ease;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-  border-color: #3f55c2;
-  outline: none;
-}
-
-
-.contact-form button {
-  margin-top: 1rem;
-  background-color: #353d69;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
+  height: 2100px;
   border: none;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* soft floating shadow */
+  display: block;
+  overflow: hidden;
 }
 
-.contact-form button:hover {
-  background-color: #262656;
+/* Hide scrollbar (extra protection) */
+.google-form-container iframe::-webkit-scrollbar {
+  display: none;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .contact-form {
-    padding: 1.5rem;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+  .google-form-container iframe {
+    height: 2300px;
   }
 }
 
@@ -646,3 +597,7 @@ html {
   font-size: 0.9rem;
 }
 
+.footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
