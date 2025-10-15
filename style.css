@@ -151,8 +151,8 @@ html {
 }
 
 .list {
-  list-style-type: disc;
-  font-size: 1rem;
+  list-style:none;
+  font-size: 1.2rem;
   padding-left: 1.2rem;
   padding-top: 2rem;
 }
@@ -542,6 +542,8 @@ html {
   padding: 4rem;
   background-color: #f5f5f5;
   text-align: center;
+  padding-bottom: 2rem;
+  
 }
 
 .contact h2 {
@@ -562,6 +564,7 @@ html {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
+  margin-bottom: 0;
 }
 
 /* Style the iframe itself */
@@ -583,7 +586,7 @@ html {
 /* Responsive adjustment for mobile */
 @media (max-width: 768px) {
   .google-form-container iframe {
-    height: 2300px;
+    height: 1800px; 
   }
 }
 
