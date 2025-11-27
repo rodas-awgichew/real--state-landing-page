@@ -57,7 +57,6 @@ If you have any questions or suggestions, please open an issue or contact me via
 
 ## ⭐️ Acknowledgements
 
-- Inspiration from real estate landing page designs and UI/UX trends.
 - [FontAwesome](https://fontawesome.com/) for icons.
 - [Google Fonts](https://fonts.google.com/) for typography resources.
 
