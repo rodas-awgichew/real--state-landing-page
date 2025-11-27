@@ -9,44 +9,51 @@
 </head>
 <body>
   <div class="container">
-  <div class="hero-container" id ="home">
-    
-    <!--  Header -->
-    <header class="header">
-      <div class="brand">
-        <img src="images/log.jpeg" alt="brand logo" class="logo-img">
-        <span class="logo">Habesha Haven</span>
-      </div>
-      <nav>
-        <ul class="tabs">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-          <li><a href="#" id="login-link">Login</a></li>
-        </ul>
-      </nav>
+ <div class="hero-section" id="home">
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <img src="images/log.jpeg" alt="Habesha Haven Logo" class="logo-img">
+            <span class="logo-text">Habesha Haven</span>
+        </div>
+        <nav class="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="#" id="login-link" class="nav-link btn-login">Login</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
 
-    <!--  Hero Content -->
-    <div class="text-box-wrapper">
-      <div class="text">
-        <h1>Find Your Perfect Home in <em>Addis Ababa</em></h1>
-        <h2>Your ideal home is just a click away—discover properties backed by trust, tech, and the people who know your neighborhood best.</h2>
-        <ul class="list">
-          <li>Stable Long-Term Investment</li>
-          <li>Tangible Ownership & Security</li>
-          <li>Lifestyle & Location Power</li>
-        </ul>
-      </div>
-      <div class="box">
-        <p>Book your visit in one click.</p>
-        <button id="button1" onclick="location.href='#contact'">Schedule a Call</button>
-      </div>
+    <div class="hero-content-wrapper">
+        <div class="hero-text-container">
+            <h1 class="hero-title">
+                Find Your Perfect Home in <span class="highlight-text">Addis Ababa</span>
+            </h1>
+            <p class="hero-subtitle">
+                Your ideal home is just a click away—discover properties backed by trust, tech, and the people who know your neighborhood best.
+            </p>
+            <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Stable Long-Term Investment</li>
+                <li><i class="fas fa-check-circle"></i> Tangible Ownership & Security</li>
+                <li><i class="fas fa-check-circle"></i> Lifestyle & Location Power</li>
+            </ul>
+        </div>
+        
+        <div class="cta-box">
+            <p class="cta-text">Book your visit in one click.</p>
+            <a href="#contact" class="cta-button">Schedule a Call</a>
+        </div>
     </div>
-  </div>
-  <div class="scroll-indicator">
-    <i class="fas fa-angle-down"></i>
-  </div>
+    
+    <a href="#about" class="scroll-down-indicator" aria-label="Scroll down">
+        <i class="fas fa-angle-down"></i>
+    </a>
+</div>
   
   <div class="container_2" id = "about">
     <div class="heading">

@@ -1,251 +1,368 @@
-/*  Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Define a new, cozy, and silent color palette */
+    --primary-color: #A0522D;     /* Terracotta/Sienna - Warm, earthy primary */
+    --secondary-color: #D2B48C;   /* Tan/Light Brown - Soft accent */
+    --accent-color: #5D4037;      /* Deep Coffee Brown - Engagin CTA/Highlight */
+    
+    --dark-text: #36454F;         /* Muted Charcoal/Slate - Silent base text */
+    --light-text: #F8F8F8;        /* Near-white */
+    
+    --bg-light: #FDF7F0;          /* Creamy Off-White - Cozy background */
+    --bg-dark: #EAE3D9;           /* Light Beige */
+    
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+/* ------------------------------------- */
+/* --- 1. HERO SECTION (HOME PAGE) --- */
+/* ------------------------------------- */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    /* Use a background image, centered and covering the area */
+    background: url('images/addis-skyline.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* Dark overlay for text readability */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); 
 }
 
-/*  Main Container */
-.container {
-  background-color: rgb(238, 238, 241);
-  width: 100%;
-  min-height: 100vh; 
+/* ------------------------------------- */
+/* --- 2. HEADER / NAVBAR --- */
+/* ------------------------------------- */
+
+.navbar {
+    width: 100%;
+    position: sticky; /* Sticky or fixed header for modern feel */
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    box-shadow: var(--shadow-light);
+    /* Animation: slide down on load */
+    animation: slideDown 0.5s ease-out forwards;
 }
 
-/*  HERO SECTION */
-.hero-container {
-  position: relative;
-  min-height: 100vh;
-  background-image: url('images/demo.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  padding: 2rem; 
-  animation: fadeInHero 1.2s ease forwards;
-  overflow: visible; 
-}
-
-@keyframes fadeInHero {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero-container * {
-  position: relative;
-  z-index: 2;
-}
-
-/* STICKY HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 1.5rem; 
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
-  background-color: rgba(15, 15, 16, 0.85); 
-  flex-wrap: wrap; 
+.navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
 .logo-img {
-  width: 80px; 
-  height: 80px;
-  object-fit: contain;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.logo {
-  font-size: 2rem; 
-  font-weight: bold;
-  color: white;
-}
-
-
-.tabs {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  font-size: 1rem;
-  flex-wrap: wrap; 
-}
-
-.tabs li a {
-  color: rgb(243, 239, 239);
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.tabs li a:hover {
-  color: rgb(63, 85, 194);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-#login-link {
-  background-color: #303963;
-  font-size: 1.0rem;
-  min-height: 40px;
-  border-radius: 20px;
-  padding:8px;
-}
-
-#login-link:hover {
-  color: #262656;
-  text-decoration: underline;
-}
-
-
-/*  HERO TEXT + CTA BOX */
-.text-box-wrapper {
-  display: flex;
-  flex-wrap: wrap; /* ✅ Allows vertical stacking on smaller devices */
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  align-items: center;
-}
-
-.text {
-  flex: 1 1 60%;
-  margin-left: 0; /* ✅ Removed hard margin for flexibility */
-}
-
-.text h1 {
-  font-size: clamp(2rem, 5vw, 4rem); /* ✅ Responsive text sizing */
-  margin-bottom: 1.5rem;
-}
-
-.text h2 {
-  font-size: clamp(1.2rem, 3vw, 1.6rem); /* ✅ Responsive text sizing */
-  font-weight: normal;
-  margin-bottom: 1rem;
-  padding-top: 1.5rem;
-}
-
-.list {
-  list-style:none;
-  font-size: 1.2rem;
-  padding-left: 1.2rem;
-  padding-top: 2rem;
-}
-
-/* 💬 CTA BOX */
-.box {
-  flex: 1 1 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #e9e9f3;
-  color: rgb(17, 15, 15);
-  border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  margin-top: 2rem; /* ✅ Removed fixed margin for flexibility */
-  font-size: 1rem;
-  padding: 1.2rem;
-}
-
-#button1 {
-  margin-top: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background-color: rgb(53, 53, 95);
-  color: rgb(218, 229, 241);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#button1:hover {
-  background-color: rgb(61, 61, 157);
-  transform: scale(1.04);
-  box-shadow: 0 12px 28px rgba(63, 86, 202, 0.3);
-}
-
-/* ⬇️ SCROLL INDICATOR */
-.scroll-indicator {
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  animation: bounce 1.5s infinite;
-  margin-bottom: 2rem;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
-
-/* 📱 RESPONSIVE MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .tabs {
-    justify-content: center;
-  }
-
-  .text-box-wrapper {
-    flex-direction: column;
-    padding: 2rem 1rem;
-  }
-
-  .text {
-    width: 100%;
-    text-align: center;
-  }
-
-  .box {
-    width: 90%;
-    margin: 2rem auto 0;
-  }
-
-  .scroll-indicator {
-    margin-bottom: 1rem;
-  }
-
-  .logo-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .logo {
+.logo-text {
     font-size: 1.5rem;
-  }
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.menu-toggle {
+    display: none; /* Hide on desktop */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Underline animation for nav links */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: var(--light-text) !important;
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-login::after {
+    content: none; /* Remove underline for button */
+}
+
+/* ------------------------------------- */
+/* --- 3. HERO CONTENT --- */
+/* ------------------------------------- */
+
+.hero-content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    width: 90%;
+    padding-top: 50px;
+    color: var(--light-text);
+}
+
+.hero-text-container {
+    /* Animation: fade in and move up */
+    animation: fadeInSlideUp 1s ease-out 0.3s backwards;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.highlight-text {
+    color: var(--accent-color);
+    font-style: normal;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    list-style: none;
+    font-size: 1.1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    /* Animation: subtle pulse on the icon */
+}
+
+.feature-list i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.cta-box {
+    background-color: var(--bg-light);
+    color: var(--dark-text);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    /* Animation: fade in from right */
+    animation: fadeInFromRight 1s ease-out 0.5s backwards;
+    height: fit-content;
+    align-self: flex-start; /* Stick to the top of its grid column */
+}
+
+.cta-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #1e7e34;
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Scroll Indicator */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light-text);
+    font-size: 1.5rem;
+    opacity: 0.8;
+    /* Animation: bounce effect */
+    animation: bounce 2s infinite;
+}
+
+.scroll-down-indicator:hover {
+    opacity: 1;
+}
+
+/* ------------------------------------- */
+/* --- 4. KEYFRAME ANIMATIONS --- */
+/* ------------------------------------- */
+
+/* Header Slide Down */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Hero Text Fade In and Up */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CTA Box Fade In from Right */
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bounce for Scroll Indicator */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Pulse for Feature Icons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ------------------------------------- */
+/* --- 5. RESPONSIVENESS (Optional but Recommended) --- */
+/* ------------------------------------- */
+
+@media (max-width: 992px) {
+    .hero-content-wrapper {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        text-align: center;
+        padding-top: 100px; /* More padding at the top */
+    }
+
+    .hero-text-container,
+    .cta-box {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        display: none; /* Hide nav links on smaller screens (would use JS to toggle a mobile menu) */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu icon */
+        background: none;
+        border: none;
+        color: var(--dark-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 }
 /* 📦 Section: Strength Of Our Company */
 .container_2 {
