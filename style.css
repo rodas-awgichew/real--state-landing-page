@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Define a new, cozy, and silent color palette */
     --primary-color: #A0522D;     /* Terracotta/Sienna - Warm, earthy primary */
     --secondary-color: #D2B48C;   /* Tan/Light Brown - Soft accent */
     --accent-color: #5D4037;      /* Deep Coffee Brown - Engagin CTA/Highlight */
@@ -29,40 +28,33 @@ body {
     scroll-behavior: smooth;
 }
 
-/* ------------------------------------- */
 /* --- 1. HERO SECTION (HOME PAGE) --- */
-/* ------------------------------------- */
 
 .hero-section {
     position: relative;
     height: 100vh;
     min-height: 600px;
-    /* Use a background image, centered and covering the area */
     background: url('images/addis-skyline.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* Dark overlay for text readability */
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); 
 }
 
-/* ------------------------------------- */
 /* --- 2. HEADER / NAVBAR --- */
-/* ------------------------------------- */
 
 .navbar {
     width: 100%;
-    position: sticky; /* Sticky or fixed header for modern feel */
+    position: sticky; 
     top: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.95); 
     box-shadow: var(--shadow-light);
-    /* Animation: slide down on load */
     animation: slideDown 0.5s ease-out forwards;
 }
 
@@ -144,9 +136,7 @@ body {
     content: none; /* Remove underline for button */
 }
 
-/* ------------------------------------- */
 /* --- 3. HERO CONTENT --- */
-/* ------------------------------------- */
 
 .hero-content-wrapper {
     position: absolute;
@@ -163,7 +153,6 @@ body {
 }
 
 .hero-text-container {
-    /* Animation: fade in and move up */
     animation: fadeInSlideUp 1s ease-out 0.3s backwards;
 }
 
@@ -197,7 +186,6 @@ body {
 .feature-list li {
     display: flex;
     align-items: center;
-    /* Animation: subtle pulse on the icon */
 }
 
 .feature-list i {
@@ -214,10 +202,9 @@ body {
     border-radius: 12px;
     box-shadow: var(--shadow-light);
     text-align: center;
-    /* Animation: fade in from right */
     animation: fadeInFromRight 1s ease-out 0.5s backwards;
     height: fit-content;
-    align-self: flex-start; /* Stick to the top of its grid column */
+    align-self: flex-start; 
 }
 
 .cta-text {
@@ -242,7 +229,7 @@ body {
 
 .cta-button:hover {
     background-color: #1e7e34;
-    transform: scale(1.05); /* Zoom effect on hover */
+    transform: scale(1.05); 
 }
 
 /* Scroll Indicator */
@@ -262,11 +249,8 @@ body {
     opacity: 1;
 }
 
-/* ------------------------------------- */
 /* --- 4. KEYFRAME ANIMATIONS --- */
-/* ------------------------------------- */
 
-/* Header Slide Down */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -276,7 +260,7 @@ body {
     }
 }
 
-/* Hero Text Fade In and Up */
+
 @keyframes fadeInSlideUp {
     from {
         opacity: 0;
@@ -336,25 +320,20 @@ body {
         text-align: center;
         padding-top: 100px; /* More padding at the top */
     }
-
     .hero-text-container,
     .cta-box {
         max-width: 600px;
         margin: 0 auto;
     }
-
     .hero-title {
         font-size: 2.5rem;
     }
-
     .hero-subtitle {
         font-size: 1rem;
     }
-
     .nav-menu {
         display: none; /* Hide nav links on smaller screens (would use JS to toggle a mobile menu) */
     }
-
     .menu-toggle {
         display: block; /* Show menu icon */
         background: none;
@@ -364,296 +343,276 @@ body {
         cursor: pointer;
     }
 }
-/* 📦 Section: Strength Of Our Company */
-.container_2 {
-  margin-top: 10px;
-  width: 100%;
-  min-height: 40vh;
-  /* No change needed here — base container is flexible */
+
+.about-section {
+    padding: 80px 0; /* Vertical padding for the section */
+    background-color: var(--bg-light); /* Creamy background */
 }
 
+.about-section .container {
+    flex-direction: column; /* Stacks the heading and box-stack vertically */
+}
+
+/* Heading Style */
 .heading {
-  padding-top: 40px;
-  position: relative;
-  justify-items: center;
-  text-align: center; /* 🆕 Added for consistent alignment across devices */
+    text-align: center;
+    margin-bottom: 50px;
+}
+.heading h1 { 
+    font-size: 2.5rem; 
+    color: var(--primary-color); 
+    margin-bottom: 10px; 
+    animation: slideDown 1s ease-out;
+}
+.heading p { 
+    font-size: 1.2rem; 
+    color: var(--secondary-color); /* Use secondary color for separator text */
+    margin-bottom: 10px; 
+}
+.heading h3 { 
+    /* Removed h3 from the main heading block since we moved the "Live Where It Feels Right!" to the <p> */
 }
 
-/* 📐 Box Layout for Strength Features */
+/* About - Feature Boxes Grid */
 .box-stack {
-  display: flex;
-  gap: 10px;
-  padding: 60px;
-  border-radius: 15px;
-  justify-content: space-evenly; /* 🆕 Evenly distributes boxes across screen */
-  flex-wrap: wrap; /* 🆕 Enables wrapping on smaller screens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min size for better fit */
+    gap: 30px;
+    width: 100%;
 }
 
-/* 🔹 Individual Feature Card */
 .each_box {
-  width: 280px; /* 🆕 Fixed width for balance across resolutions */
-  height: 220px;
-  background-image: url('images/demo.png');
-  background-size: cover;
-  background-position: center;
-  color: aliceblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  cursor: pointer;
+    background-color: var(--bg-dark); /* Light Beige box background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInSlideUp 0.8s ease-out forwards;
 }
 
+/* Staggered animation delay for motion effect */
+.box-stack .each_box:nth-child(1) { animation-delay: 0.1s; }
+.box-stack .each_box:nth-child(2) { animation-delay: 0.3s; }
+.box-stack .each_box:nth-child(3) { animation-delay: 0.5s; }
+
+/* Motion/Animation on Hover */
 .each_box:hover {
-  transform: scale(1.04);
-  box-shadow: 0 12px 28px rgba(63, 85, 194, 0.3); /* 🆕 Added glow effect */
+    transform: translateY(-8px); /* Lifts the box higher */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow */
 }
 
-.each_box h4 {
-  font-size: 1.2rem;
+.each_box i { /* Icon styling */
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
-.fas {
-  color: rgb(80, 22, 22);
-  font-size: 24px;
+.each_box:hover i {
+    color: var(--accent-color); 
 }
 
-/* Section: Stats Overview */
-.container_3 {
-  margin-top: 20px;
-  padding-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 40px;
-  color: rgb(15, 16, 17);
+.each_box h3 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.3rem; }
+.each_box h4 { font-weight: 400; font-size: 0.95rem; }
+
+/* --- 4. STATS SECTION --- */
+
+.stats-section {
+    background-color: var(--accent-color);
+    padding: 60px 0;
+    color: #F8F8F8;
+}
+
+.stats-grid { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    color:#ac7171;
 }
 
 .data {
-  min-height: 25vh;
-  border: none;
-  text-align: center; 
-  flex: 1 1 200px; 
+    opacity: 0; 
+    transform: scale(0.9);
+    animation: scaleIn 0.8s ease-out forwards;
+}
+.stats-grid .data:nth-child(1) { animation-delay: 0.2s; }
+.stats-grid .data:nth-child(2) { animation-delay: 0.4s; }
+.stats-grid .data:nth-child(3) { animation-delay: 0.6s; }
+.stats-grid .data:nth-child(4) { animation-delay: 0.8s; }
+
+
+.data i { 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    color: var(--secondary-color); 
+}
+.data h1 { 
+    font-size: 2.8rem; 
+    font-weight: 700; 
+    line-height: 1.1;
+}
+.data p { 
+    font-size: 1rem; 
+    opacity: 0.9;
 }
 
-/* Section: Explore Our Sites (Listings) */
-.container_4 {
-  margin-top: 20px;
-  width: 100%;
-  min-height: 4rem;
-  background-color: #f5f5f5;
-  padding: 2rem;
-  justify-content: space-between;
+
+/* --- 5. PROPERTY SHOWCASE --- */
+
+.property-showcase {
+    padding: 80px 0; 
+    background-color: var(--bg-light);
 }
 
+.property-showcase .container {
+    flex-direction: column; 
+}
+
+/* Property Boxes Grid */
 .box-stack2 {
-  display: flex;
-  gap: 20px;
-  padding: 60px;
-  flex-wrap: wrap; 
-  justify-content: center; 
-}
-
-.boxes img {
-  height: 120px;
-  width: 100%;
-  border: 2px solid rgb(38, 38, 86);
-  border-radius: 5px;
-  object-fit: cover; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 70px;
+    margin-top: -10px;
+    width: 100%;
 }
 
 .boxes {
-  max-width: 320px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 8px;
-  min-height: 40vh;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.03);
-  transition: box-shadow 0.1s ease;
+    background-color: var(--bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+.box-stack2 .boxes:nth-child(1) { animation-delay: 0.1s; }
+.box-stack2 .boxes:nth-child(2) { animation-delay: 0.3s; }
+.box-stack2 .boxes:nth-child(3) { animation-delay: 0.5s; }
+
+.boxes:hover { 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-5px); /* Motion: Lift effect on hover */
 }
 
-.boxes:hover {
-  transform: perspective(800px) rotateY(3deg) scale(1.02); /* 🆕 Hover animation */
-  transition: transform 0.4s ease;
+.property-img { 
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+.boxes:hover .property-img {
+    transform: scale(1.05); /* Motion: Image zoom effect on hover */
 }
 
-.price {
-  margin-top: auto;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2f2c2c;
+.property-details {
+    padding: 15px 20px;
 }
 
-/* Section: Call to Action Banner */
-.container_5 {
-  margin-top: 50px;
-  background-image: url('images/demo.png');
-  background-size: cover;
-  background-position: center;
-  color: #f5f5f5;
-  width: 100%;
-  min-height: 40vh;
-  padding: 4rem 2rem; 
-  font-size: 1.5rem; 
-  text-align: center;
+.boxes h2 { 
+    color: var(--primary-color); 
+    margin-bottom: 5px; 
+    font-size: 1.4rem; 
+}
+.boxes h4 { 
+    font-weight: 400; 
+    font-size: 0.95rem; 
+    margin-bottom: 15px;
+}
+.boxes .price { 
+    background-color: var(--accent-color); 
+    color: var(--light-text); 
+    padding: 10px 20px; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    display: block; /* Make price bar full width */
+    margin: 0 -20px -15px -20px; /* Use negative margin to span the box width */
 }
 
-/* CTA Button */
-.button2 {
-  background-color: rgb(38, 38, 86);
-  color: aliceblue;
-  font-size: 16px;
-  height: 60px;
-  border-radius: 5px;
-  margin-top: 30px;
-  padding: 0 2rem; 
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
+/* --- 6. TESTIMONIALS --- */
+
+
+.comments { 
+    background-color: var(--bg-dark); 
+    text-align: center; 
+    padding: 60px 0 80px;
 }
-
-.button2:hover {
-  transform: scale(1.04);
-  box-shadow: 0 12px 28px rgba(197, 198, 208, 0.3);
-}
-
-
-/*  Unified Responsive Rules */
-@media screen and (max-width: 768px) {
-  /* Stack grid boxes vertically */
-  .box-stack,
-  .box-stack2 {
+.comments .container {
     flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
-
-  .each_box,
-  .boxes {
-    width: 90%;
-    margin-bottom: 2rem;
-  }
-
-  .container_3 {
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
-
-  .data {
-    width: 80%;
-    margin-bottom: 1.5rem;
-  }
-
-  .container_5 {
-    padding: 3rem 1.5rem;
-    font-size: 1.2rem;
-  }
-
-  .button2 {
-    width: 80%;
-    font-size: 1rem;
-  }
-}
-.button2{
-  justify-content: center;
-  background-color: rgb(38, 38, 86);
-  color:aliceblue;
-  font-size: 16px;
-  height: 60px;
-  border-radius: 5px;
-  justify-items: center;
-  margin-top: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.button2:hover {
-  transform: scale(1.04);
-  box-shadow: 0 12px 28px rgba(197, 198, 208, 0.3);
-}
-.price {
-  margin-top: auto;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2f2c2c;
-  
 }
 
-/* comment section */
-
-.comments {
-  padding: 4rem 2rem;
-  background-color: #f5f5f5;
-  text-align: center;
+.comments h2 { 
+    margin-bottom: 40px; 
+    font-size: 2.2rem; 
+    color: var(--primary-color); 
 }
-
-.comments h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #0b0b0c;
-}
-
 
 .comment-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    width: 100%;
 }
-
 
 .comment-card {
-  background-color: #ffffff;
-  color: #06070c;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  max-width: 300px;
-  flex: 1 1 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-top: 6px solid #36427d;
+    background-color: var(--bg-light);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: left;
+    border-left: 5px solid var(--secondary-color);
+    transition: border-left-color 0.3s ease;
 }
-
 
 .comment-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 28px rgba(63, 85, 194, 0.3);
+    border-left-color: var(--accent-color); 
 }
 
-.comment-card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  color: #131417;
+.comment-card h4 { 
+    color: var(--accent-color); 
+    margin-bottom: 10px; 
+    font-weight: 600;
+}
+.comment-card p { 
+    font-style: italic; 
+    font-size: 0.95rem;
 }
 
-.comment-card p {
-  font-size: 1rem;
-  line-height: 1.5;
+/* ------------------------------------- */
+/* --- 8. KEYFRAME UPDATE --- */
+/* ------------------------------------- */
+
+/* Add the new keyframe for the CTA section, if not already present */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* ------------------------------------- */
+/* --- 9. RESPONSIVENESS UPDATE --- */
+/* ------------------------------------- */
 
+@media (max-width: 992px) {
+    /* ... existing media queries ... */
 
-@media screen and (max-width: 768px) {
-  .comment-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+    .cta-full-width .header { 
+        font-size: 1.5rem; 
+        padding: 0 10px;
+    }
+    .button2 {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
 }
-
 /* Contact Section */
 .contact {
   padding: 4rem;
