@@ -310,15 +310,12 @@ body {
     }
 }
 
-/* ------------------------------------- */
-/* --- 5. RESPONSIVENESS (Optional but Recommended) --- */
-/* ------------------------------------- */
 
 @media (max-width: 992px) {
     .hero-content-wrapper {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: 1fr; 
         text-align: center;
-        padding-top: 100px; /* More padding at the top */
+        padding-top: 100px; 
     }
     .hero-text-container,
     .cta-box {
@@ -332,10 +329,10 @@ body {
         font-size: 1rem;
     }
     .nav-menu {
-        display: none; /* Hide nav links on smaller screens (would use JS to toggle a mobile menu) */
+        display: none; 
     }
     .menu-toggle {
-        display: block; /* Show menu icon */
+        display: block; 
         background: none;
         border: none;
         color: var(--dark-text);
@@ -345,12 +342,12 @@ body {
 }
 
 .about-section {
-    padding: 80px 0; /* Vertical padding for the section */
-    background-color: var(--bg-light); /* Creamy background */
+    padding: 80px 0; 
+    background-color: var(--bg-light); 
 }
 
 .about-section .container {
-    flex-direction: column; /* Stacks the heading and box-stack vertically */
+    flex-direction: column; 
 }
 
 /* Heading Style */
@@ -366,23 +363,20 @@ body {
 }
 .heading p { 
     font-size: 1.2rem; 
-    color: var(--secondary-color); /* Use secondary color for separator text */
+    color: var(--secondary-color); 
     margin-bottom: 10px; 
-}
-.heading h3 { 
-    /* Removed h3 from the main heading block since we moved the "Live Where It Feels Right!" to the <p> */
 }
 
 /* About - Feature Boxes Grid */
 .box-stack {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min size for better fit */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
     width: 100%;
 }
 
 .each_box {
-    background-color: var(--bg-dark); /* Light Beige box background */
+    background-color: var(--bg-dark); 
     padding: 30px;
     border-radius: 8px;
     box-shadow: var(--shadow-light);
@@ -394,15 +388,13 @@ body {
     animation: fadeInSlideUp 0.8s ease-out forwards;
 }
 
-/* Staggered animation delay for motion effect */
 .box-stack .each_box:nth-child(1) { animation-delay: 0.1s; }
 .box-stack .each_box:nth-child(2) { animation-delay: 0.3s; }
 .box-stack .each_box:nth-child(3) { animation-delay: 0.5s; }
 
-/* Motion/Animation on Hover */
 .each_box:hover {
-    transform: translateY(-8px); /* Lifts the box higher */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); 
 }
 
 .each_box i { /* Icon styling */
@@ -500,7 +492,7 @@ body {
 
 .boxes:hover { 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
-    transform: translateY(-5px); /* Motion: Lift effect on hover */
+    transform: translateY(-5px); 
 }
 
 .property-img { 
@@ -510,7 +502,7 @@ body {
     transition: transform 0.5s ease;
 }
 .boxes:hover .property-img {
-    transform: scale(1.05); /* Motion: Image zoom effect on hover */
+    transform: scale(1.05);/
 }
 
 .property-details {
@@ -541,7 +533,7 @@ body {
 
 
 .comments { 
-    background-color: var(--bg-dark); 
+    background-color: var(--bg-light); 
     text-align: center; 
     padding: 60px 0 80px;
 }
@@ -613,59 +605,53 @@ body {
         font-size: 1rem;
     }
 }
-/* Contact Section */
-.contact {
-  padding: 4rem;
-  background-color: #f5f5f5;
-  text-align: center;
-  padding-bottom: 2rem;
-  
+/* --- 8. CONTACT SECTION --- */
+
+
+.contact { 
+    background-color: var(--bg-light);
+    padding: 80px 0;
+    text-align: center; 
 }
 
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #0f0f10;
+.contact .container {
+    flex-direction: column; 
 }
 
-.contact p {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #1e1f2f;
+.contact .heading h2 { 
+    margin-bottom: 10px; 
+    font-size: 2.2rem; 
+    color: var(--primary-color); 
 }
 
-/* Clean container — only used for centering */
+.contact .heading p { 
+    margin-bottom: 30px; 
+    font-size: 1.1rem; 
+}
+
 .google-form-container {
-  max-width: 700px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 0;
+    max-width: 700px; 
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--bg-dark); 
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: var(--shadow-light);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease-out forwards 0.2s; 
 }
 
-/* Style the iframe itself */
 .google-form-container iframe {
-  width: 100%;
-  height: 2100px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* soft floating shadow */
-  display: block;
-  overflow: hidden;
+    display: block; /* Removes any default spacing below the iframe */
 }
 
-/* Hide scrollbar (extra protection) */
-.google-form-container iframe::-webkit-scrollbar {
-  display: none;
+@media (max-width: 992px) {
+    /* ... existing media queries ... */
+    .contact {
+        padding: 50px 0;
+    }
 }
-
-/* Responsive adjustment for mobile */
-@media (max-width: 768px) {
-  .google-form-container iframe {
-    height: 1800px; 
-  }
-}
-
 
 /* footer */
 .footer {
