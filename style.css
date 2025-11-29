@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    --primary-color: #A0522D;     /* Terracotta/Sienna - Warm, earthy primary */
-    --secondary-color: #D2B48C;   /* Tan/Light Brown - Soft accent */
-    --accent-color: #5D4037;      /* Deep Coffee Brown - Engagin CTA/Highlight */
+    --primary-color: #A0522D;    
+    --secondary-color: #D2B48C;   
+    --accent-color: #5D4037;      
     
-    --dark-text: #36454F;         /* Muted Charcoal/Slate - Silent base text */
-    --light-text: #F8F8F8;        /* Near-white */
+    --dark-text: #36454F;        
+    --light-text: #F8F8F8;        
     
-    --bg-light: #FDF7F0;          /* Creamy Off-White - Cozy background */
-    --bg-dark: #EAE3D9;           /* Light Beige */
+    --bg-light: #FDF7F0;          
+    --bg-dark: #EAE3D9;          
     
-    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 * {
@@ -26,6 +26,7 @@ body {
     background-color: var(--bg-light);
     line-height: 1.6;
     scroll-behavior: smooth;
+    
 }
 
 /* --- 1. HERO SECTION (HOME PAGE) --- */
@@ -40,6 +41,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); 
+    margin-top: -120px;
 }
 
 /* --- 2. HEADER / NAVBAR --- */
@@ -58,6 +60,33 @@ body {
     animation: slideDown 0.5s ease-out forwards;
 }
 
+.navbar-inner {
+    
+    background-color: var(--bg-light); 
+    box-shadow: 1px 4px 10px rgb(43, 28, 28);
+    border-radius: 12px;
+    max-width: var(--max-width); 
+    margin: 10px auto;           
+    padding: 5px 0;              
+    position: relative;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+.navbar-inner .container {
+    width: 100%; 
+    padding: 0 20px; 
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -12px;
+}
+@media (max-width: 992px) {
+    .navbar-inner {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0; 
+    }
+}
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -150,6 +179,7 @@ body {
     width: 90%;
     padding-top: 50px;
     color: var(--light-text);
+    
 }
 
 .hero-text-container {
@@ -330,11 +360,8 @@ body {
         font-size: 1rem;
     }
     
-    /* --- Mobile Navigation Fix --- */
-    
-    /* 1. HIDE the menu off-screen using transform (REPLACES display: none;) */
+
     .nav-menu {
-        /* Overriding the default flex/desktop layout */
         position: fixed; 
         top: 0; 
         right: 0; 
@@ -343,22 +370,18 @@ body {
         max-width: 200px;
         background-color: var(--bg-light); 
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-        transform: translateX(100%); /* Initial state: PUSHED OFF SCREEN */
+        transform: translateX(100%); 
         transition: transform 0.4s ease-in-out; 
         padding-top: 80px;
-        
-        /* 🌟 KEY CHANGE: Do not use 'display: none;' here 🌟 */
-        display: flex; /* Ensure the menu content is displayed as a flex column */
+        display: flex; 
         flex-direction: column;
-        z-index: 999; /* Ensure it stays below the sticky navbar's z-index (1000) if needed */
-    }
-    
-    /* 2. SHOW the menu when .active class is added by JS */
-    .nav-menu.active {
-        transform: translateX(0); /* SLIDES THE MENU INTO VIEW */
+        z-index: 999; 
     }
 
-    /* 3. Toggle button styles (Kept as is) */
+    .nav-menu.active {
+        transform: translateX(0); 
+    }
+
     .menu-toggle {
         display: block; 
         background: none;
@@ -368,14 +391,13 @@ body {
         cursor: pointer;
         z-index: 1001;
     }
-    
-    /* 4. Ensure links stack vertically */
+
     .nav-list { 
         flex-direction: column; 
         align-items: center; 
         gap: 20px; 
-        list-style: none; /* Reset list style */
-        padding: 0; /* Remove padding */
+        list-style: none; 
+        padding: 0;
     }
 }
 
