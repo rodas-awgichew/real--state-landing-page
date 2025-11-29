@@ -312,6 +312,7 @@ body {
 
 
 @media (max-width: 992px) {
+    /* --- Hero Section Styles (Kept as is) --- */
     .hero-content-wrapper {
         grid-template-columns: 1fr; 
         text-align: center;
@@ -328,9 +329,36 @@ body {
     .hero-subtitle {
         font-size: 1rem;
     }
+    
+    /* --- Mobile Navigation Fix --- */
+    
+    /* 1. HIDE the menu off-screen using transform (REPLACES display: none;) */
     .nav-menu {
-        display: none; 
+        /* Overriding the default flex/desktop layout */
+        position: fixed; 
+        top: 0; 
+        right: 0; 
+        height: 100vh; 
+        width: 60%; 
+        max-width: 200px;
+        background-color: var(--bg-light); 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%); /* Initial state: PUSHED OFF SCREEN */
+        transition: transform 0.4s ease-in-out; 
+        padding-top: 80px;
+        
+        /* 🌟 KEY CHANGE: Do not use 'display: none;' here 🌟 */
+        display: flex; /* Ensure the menu content is displayed as a flex column */
+        flex-direction: column;
+        z-index: 999; /* Ensure it stays below the sticky navbar's z-index (1000) if needed */
     }
+    
+    /* 2. SHOW the menu when .active class is added by JS */
+    .nav-menu.active {
+        transform: translateX(0); /* SLIDES THE MENU INTO VIEW */
+    }
+
+    /* 3. Toggle button styles (Kept as is) */
     .menu-toggle {
         display: block; 
         background: none;
@@ -338,8 +366,19 @@ body {
         color: var(--dark-text);
         font-size: 1.5rem;
         cursor: pointer;
+        z-index: 1001;
+    }
+    
+    /* 4. Ensure links stack vertically */
+    .nav-list { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+        list-style: none; /* Reset list style */
+        padding: 0; /* Remove padding */
     }
 }
+
 
 .about-section {
     padding: 80px 0; 
