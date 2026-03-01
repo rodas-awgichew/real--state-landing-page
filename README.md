@@ -42,7 +42,6 @@ During the development of this project, I learned and practiced:
 
 ---
 
-
 ## 🤝 Contributing
 
 Contributions and suggestions are always welcome! Feel free to open issues or submit pull requests.
